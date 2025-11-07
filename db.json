@@ -1,0 +1,76 @@
+{
+  "juices":[
+    {
+    "id": 1,
+    "name": "Pomegranate Juice",
+    "description": "Freshly squeezed pomegranate juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 350,
+    "stock": 60,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice1.png"
+  },
+  {
+    "id": 2,
+    "name": "Grape Juice",
+    "description": "Freshly squeezed grape juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 200,
+    "stock": 70,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice2.png"
+  },
+  {
+    "id": 3,
+    "name": "Apple Juice",
+    "description": "Freshly squeezed apple juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 300,
+    "stock": 80,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice3.png"
+  },
+  {
+    "id": 4,
+    "name": "Pineapple Juice",
+    "description": "Freshly squeezed pineapple juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 200,
+    "stock": 90,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice4.png"
+  },
+  {
+    "id": 5,
+    "name": "Lemon Juice",
+    "description": "Freshly squeezed Lemon juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 150,
+    "stock": 13,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice5.png"
+  },
+  {
+    "id": 6,
+    "name": "Mango Juice",
+    "description": "Freshly squeezed mango juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 300,
+    "stock": 10,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice6.png"
+  },
+  {
+    "id": 7,
+    "name": "Orange Juice",
+    "description": "Freshly squeezed orange juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 250,
+    "stock": 110,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice7.png"
+  },
+  {
+    "id": 8,
+    "name": "Passion Juice",
+    "description": "Freshly squeezed passion juice made from 100% natural fruits. Perfectly refreshing and packed with vitamins.",
+    "price": 350,
+    "stock": 4,
+    "category": "Fresh Juice",
+    "imageUrl": "/juice8.png"
+  }
+  ]
+}
