@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import RootError from "./error/RootError.jsx";
 import SidebarProvider, { SidebarContext } from "./contexts/SidebarContext.jsx";
 import ProductProvider from "./contexts/ProductContext.jsx";
+import ProductDetails from "./pages/ProductDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     Component: Home,
     ErrorBoundary: RootError,
   },
+  { path: "/products/:id", Component: ProductDetails },
 ]);
 
 createRoot(document.getElementById("root")).render(
