@@ -7,7 +7,9 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/juices");
+        const response = await fetch(
+          "https://my-json-server.typicode.com/Chrispin1/fazu-juices/juices"
+        );
         const data = await response.json();
         setProducts(data);
         console.log(data);
