@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="min-h-screen relative bg-neutral-100">
+      <div className="min-h-screen relative bg-neutral-100 overflow-x-hidden">
         <div
           className="absolute inset-0 opacity-40 "
           style={{
