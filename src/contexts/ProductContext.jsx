@@ -8,7 +8,7 @@ const ProductProvider = ({ children }) => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://my-json-server.typicode.com/Chrispin1/fazu-juices/juices"
+          "https://json-server-api-3-0jfv.onrender.com/juices"
         );
         const data = await response.json();
         setProducts(data);
