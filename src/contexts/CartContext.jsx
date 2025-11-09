@@ -80,6 +80,7 @@ const CartProvider = ({ children }) => {
         clearCart,
         total,
         cart,
+        itemAmount,
       }}
     >
       {children}

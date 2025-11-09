@@ -3,7 +3,7 @@ import { ProductContext } from "../contexts/ProductContext";
 import { Link } from "react-router";
 
 const Hero = () => {
-  const { products, setProducts } = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
   return (
     <div className="pt-20 md:max-w-7xl mx-auto px-6 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
