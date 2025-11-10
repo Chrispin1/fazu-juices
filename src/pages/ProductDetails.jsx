@@ -8,25 +8,34 @@ import Sidebar from "../components/Sidebar";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const {
-    addToCart,
-    removeFromCart,
-    increaseItemAmount,
-    decreaseItemAmount,
-    clearCart,
-    total,
-    cart,
-    itemAmount,
-  } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const { products } = useContext(ProductContext);
+
+  if (!products || products.length === 0) {
+    return (
+      <>
+        <div className="h-screen flex flex-col items-center justify-center px-4 md:px-0">
+          <Loader className="animate-spin" size={30} />
+          <h1 className="pt-2 text-2xl animate-pulse">Loading products...</h1>
+        </div>
+      </>
+    );
+  }
+
   const product = products.find((item) => item.id === parseInt(id));
 
   if (!product) {
     return (
-      <div className="h-screen flex flex-col items-center justify-center px-4 md:px-0">
-        <Loader className="animate-spin" size={30} />
-        <h1 className="pt-2 text-2xl animate-pulse">Loading...</h1>
-      </div>
+      <>
+        <Navbar />
+        <Sidebar />
+        <div className="h-screen flex flex-col items-center justify-center px-4 md:px-0">
+          <h1 className="text-2xl font-semibold">Product not found</h1>
+          <Link to="/" className="mt-4 text-amber-500 underline">
+            Go back to home
+          </Link>
+        </div>
+      </>
     );
   }
 
@@ -54,7 +63,10 @@ const ProductDetails = () => {
             </div>
             <div className="pt-3 tracking-wide text-xl ">{description}</div>
             <div className="w-full mx-auto pt-4">
-              <button className="px-6 py-2 bg-linear-to-r from-amber-500 to-amber-600 rounded-md cursor-pointer text-white">
+              <button
+                onClick={handleAddToCart}
+                className="px-6 py-2 bg-linear-to-r from-amber-500 to-amber-600 rounded-md cursor-pointer text-white"
+              >
                 Add To Cart
               </button>
             </div>

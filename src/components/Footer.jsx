@@ -4,7 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="w-full bg-black">
-      <div className="flex items-center justify-center pt-6 pb-6">
+      <div
+        className="flex items-center justify-center pt-6 pb-6"
+        data-aos="fade-up"
+      >
         <h1 className="text-white">
           Copyright &copy; <span className="text-amber-500">Fazu Juices. </span>
           <span>{currentYear} </span>

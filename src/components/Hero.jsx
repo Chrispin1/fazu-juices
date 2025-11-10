@@ -1,14 +1,24 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { Link } from "react-router";
+import { Loader } from "lucide-react";
 
 const Hero = () => {
   const { products } = useContext(ProductContext);
+  if (!products || products.length == 0) {
+    return (
+      <div className="h-screen flex flex-col items-center justify-center px-4 md:px-0">
+        <Loader className="animate-spin" size={30} />
+        <h1 className="pt-2 text-2xl animate-pulse">Loading...</h1>
+      </div>
+    );
+  }
   return (
     <div className="pt-20 md:max-w-7xl mx-auto px-6 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.map((product, index) => {
           const { id, name, category, price, imageUrl } = product;
+
           return (
             <Link to={`/products/${id}`} viewTransition>
               <div

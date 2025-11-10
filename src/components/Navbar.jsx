@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { ShoppingCartIcon } from "lucide-react";
 import { SidebarContext } from "../contexts/SidebarContext";
+import { CartContext } from "../contexts/CartContext";
 
 export default function Navbar() {
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { setIsOpen } = useContext(SidebarContext);
   const [isActive, setIsActive] = useState(false);
+  const { itemAmount } = useContext(CartContext);
   useEffect(() => {
     const handleScroll = () => {
       setIsActive(window.scrollY > 20);
@@ -42,7 +44,7 @@ export default function Navbar() {
               <div className="relative">
                 <ShoppingCartIcon />
                 <div className="absolute bottom-2.5 -right-1 p-0.5 bg-amber-500 rounded-xl text-xs text-[12px] h-4 w-4 flex justify-center items-center">
-                  1
+                  {itemAmount}
                 </div>
               </div>
               <p>Cart</p>

@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { X } from "lucide-react";
+import { CartContext } from "../contexts/CartContext";
+import CartItem from "./CartItem";
 
 const Sidebar = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { itemAmount, cart } = useContext(CartContext);
+  const { total, clearCart } = useContext(CartContext);
+
   return (
     <>
       <div
@@ -22,24 +27,33 @@ const Sidebar = () => {
             <div className="cursor-pointer" onClick={() => setIsOpen(false)}>
               <X />
             </div>
-            <div className="text-xl font-semibold font-grotesque">Cart (0)</div>
-          </div>
-          <div className="border-t flex items-center justify-between pt-4">
-            <div className="flex items-center gap-2 text-xl font-jost font-semibold">
-              <h1>Total:</h1>
-              <p>Ksh 2000</p>
-            </div>
-            <div>
-              <button className="w-full px-2 py-1 border bg-neutral-300 text-amber-600 rounded-md">
-                Clear Cart
-              </button>
+            <div className="text-xl font-semibold font-grotesque">
+              Cart ({itemAmount})
             </div>
           </div>
-          <div className="pt-4 w-full flex items-center justify-center">
-            <button className="w-full bg-linear-to-r from-amber-400 to-amber-600 py-3 rounded-md text-white">
-              Checkout
-            </button>
-          </div>
+          <CartItem />
+          {cart.length > 0 && (
+            <>
+              <div className="flex items-center justify-between pt-4">
+                <div className="flex items-center gap-2 text-xl font-jost font-semibold">
+                  <h1>Total:</h1>
+                  <p>Ksh {total.toLocaleString()}</p>
+                </div>
+                <button
+                  onClick={clearCart}
+                  className="px-2 py-1 border bg-neutral-300 text-amber-600 rounded-md hover:bg-neutral-400 transition"
+                >
+                  Clear Cart
+                </button>
+              </div>
+
+              <div className="pt-4">
+                <button className="w-full bg-linear-to-r from-amber-400 to-amber-600 py-3 rounded-md text-white font-semibold hover:opacity-90 transition">
+                  Checkout
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>
